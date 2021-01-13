@@ -1,0 +1,50 @@
+#deck{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    height: 200px;
+    width: 200px;
+    max-height: 200px;
+    max-width: 200px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+.value{
+    font-size: 24px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.hearts {
+    background-image: url(resources/hearts.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.diamonds {
+    background-image: url(resources/diamonds.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.clubs {
+    background-image: url(resources/clubs.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.spades {
+    background-image: url(resources/spades.PNG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
