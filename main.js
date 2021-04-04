@@ -12,7 +12,7 @@ window.addEventListener("load", (event) => {
     shuffle(deck);
     renderDeck(deck);
 
-    document.querySelector(".shuffle").addEventListener("click", (event) =>{
+    document.querySelector(".shuffle").addEventListener("click", (event) => {
         shuffle(deck);
         renderDeck(deck);
     });
@@ -31,18 +31,38 @@ function shuffle(deck) {
 
 function renderDeck(deck) {
     document.getElementById("deck").innerHTML = "";
-
     for (let i = 0; i < deck.length; i++) {
         let card = document.createElement("div");
         let value = document.createElement("div");
         let suit = document.createElement("div");
+        let suitValue = document.createElement("div");
+        let suitMiddle = document.createElement("div");
+        suitMiddle.className = "middle";
         card.className = "card " + deck[i].Suit;
         value.className = "value";
-        suit.className = "suit" ;
-
+        suit.className = "suit";
+        suitValue.className = "suitValue";
+        if (deck[i].Suit === "spades") {
+            suitValue.innerHTML = `♠`;
+            suitMiddle.innerHTML = `♠`;
+        }
+        if(deck[i].Suit === "hearts"){
+            suitValue.innerHTML = "♥";
+            suitMiddle.innerHTML = "♥";
+        }
+        if(deck[i].Suit === "diamonds"){
+            suitValue.innerHTML = "♦";
+            suitMiddle.innerHTML = "♦";
+        }
+        if(deck[i].Suit === "clubs"){
+            suitValue.innerHTML = "♣";
+            suitMiddle.innerHTML = "♣";
+        }
         value.innerHTML = deck[i].Value;
         card.appendChild(value);
         card.appendChild(suit);
+        card.appendChild(suitValue);
+        card.appendChild(suitMiddle);
         document.getElementById("deck").appendChild(card);
     }
 
